@@ -1,0 +1,12 @@
+.album-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.album-item-wrapper {
+    width: 33.33%;
+    margin-bottom: 57px;
+}

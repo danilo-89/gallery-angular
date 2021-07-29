@@ -1,0 +1,23 @@
+
+
+<button (click)="onSave()">Save</button>
+
+<div class="album-wrapper">
+
+    
+
+<ng-container *ngFor = "let n of albumArray; let index = index">
+
+    <app-album-picture
+        [title]="albumArray[index]['title']"
+        [thumb]="albumArray[index]['thumbnailUrl']"
+        [imgUrl]="albumArray[index]['url']"
+    ></app-album-picture>
+
+</ng-container>
+
+</div>
+
+<!-- [title]="albumArray[index]['title']"
+        [author]="getUserName(albumArray[index]['userId'])"
+        [albumLink]="albumArray[index]['id']" -->

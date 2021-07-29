@@ -1,0 +1,12 @@
+.gallery-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-item-wrapper {
+    width: 33.33%;
+    margin-bottom: 57px;
+}

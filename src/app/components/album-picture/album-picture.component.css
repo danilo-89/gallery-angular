@@ -1,0 +1,36 @@
+.picture-item {
+    display: flex;
+    flex-flow: column;
+    width: 353px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.picture-item > img {
+    display: block;
+    width: 100%;
+    height: 199px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 16px;
+}
+
+.picture-item > h3 {
+    margin-bottom: 2px;
+    font-size: 32px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 300;
+}
+
+.picture-item > h3:hover {
+    color: #FFC23B;
+    text-decoration: none;
+}
+
+.picture-item > p {
+    font-size: 22px;
+    color: #8A8A8A;
+    font-weight: 400;
+}

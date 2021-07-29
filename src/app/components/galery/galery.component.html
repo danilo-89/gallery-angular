@@ -1,0 +1,17 @@
+<h1>Foto albumi familije Marković</h1>
+
+<p>galery works!</p>
+
+{{testStr}}
+
+<div class="gallery-wrapper">
+<ng-container *ngFor = "let n of albumArray; let index = index">
+
+    <app-galery-item
+        [title]="albumArray[index]['title']"
+        [author]="getUserName(albumArray[index]['userId'])"
+        [albumLink]="albumArray[index]['id']"
+    ></app-galery-item>
+
+</ng-container>
+</div>
