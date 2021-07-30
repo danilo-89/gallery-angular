@@ -19,6 +19,15 @@ export class SingleAlbumComponent implements OnInit {
     if (event) { event.stopPropagation(); }
   }
 
+  deletePic(imgId:string) {
+    console.log(imgId)
+    const filteredArr = this.albumArray.filter((item:{id:string}) => {return item['id']!=imgId})
+    this.albumArray = filteredArr;
+  }
+
+  searchPics() {
+    console.log('imgId')
+  }
 
   constructor(
     private http: HttpClient,

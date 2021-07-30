@@ -4,7 +4,12 @@
 
 <div class="album-wrapper">
 
-    
+    <input 
+        type="search" 
+        name="" 
+        id=""
+        (keyup)="searchPics()"
+    >
 
 <ng-container *ngFor = "let n of albumArray; let index = index">
 
@@ -12,6 +17,8 @@
         [title]="albumArray[index]['title']"
         [thumb]="albumArray[index]['thumbnailUrl']"
         [imgUrl]="albumArray[index]['url']"
+        [imgId]="albumArray[index]['id']"
+        (onDeletePic)="deletePic($event)"
     ></app-album-picture>
 
 </ng-container>

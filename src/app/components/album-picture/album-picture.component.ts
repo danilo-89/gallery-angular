@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-album-picture',
@@ -11,7 +11,13 @@ export class AlbumPictureComponent implements OnInit {
   @Input() title:string="";
   @Input() thumb:string="";
   @Input() imgUrl:string="";
+  @Input() imgId:string="";
+  @Output() onDeletePic = new EventEmitter();
 
+
+  fireDeletePicEvent(a:any) {
+    this.onDeletePic.emit(a)
+  }
 
   constructor() { }
 
