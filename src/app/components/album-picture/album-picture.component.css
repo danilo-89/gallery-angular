@@ -1,9 +1,19 @@
 .picture-item {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     width: 353px;
     margin-left: auto;
     margin-right: auto;
+}
+
+:host-context(.row-grid) .picture-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: unset;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .picture-item > img {
@@ -15,18 +25,51 @@
     margin-bottom: 16px;
 }
 
+:host-context(.row-grid) .picture-item > img {
+    display: block;
+    width: 353px;
+    min-width: 353px;
+    height: 199px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
 .picture-item > h3 {
     margin-bottom: 2px;
     font-size: 32px;
-    cursor: pointer;
     text-decoration: none;
     color: #000000;
     font-weight: 300;
+    display: flex;
+    justify-content: space-between;
 }
 
-.picture-item > h3:hover {
-    color: #FFC23B;
+:host-context(.row-grid) .picture-item > h3 {
+    margin-bottom: 2px;
+    font-size: 32px;
     text-decoration: none;
+    color: #000000;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.picture-item .deleteSpan {
+    display: inline-block;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.picture-item .deleteSpan i {
+    color: #B4B4B4;
+    font-size: 25px;
+}
+
+.picture-item .deleteSpan i:hover {
+    color: #FFC23B;
 }
 
 .picture-item > p {

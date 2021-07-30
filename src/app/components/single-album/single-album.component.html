@@ -1,23 +1,57 @@
+<div class="album-top">
 
+    <div class="top-left">
+        <a href="/albums" class="back-btn">
+            <span>← povratak</span>
+        </a>
+        <h2>
+            {{albumName}}
+        </h2>
+        <div class="searchHolder">
+            <i antIcon
+                type="search"
+                theme="outline"
+                >
+            </i>
+            <input
+                type="text"
+                placeholder="Pretraži"
+                name=""
+                id=""
+                (keyup)="searchPics($event.target)"
+            >
+        </div>
+        <ng-template [ngIf]="!filteredArr.length && searchActive">
+            <div class="no-results">No search results!</div>
+        </ng-template>
+    </div>
+    <div class="top-right">
+        <i antIcon
+            [class]="rowGrid ? 'active' : ''"
+            type="menu"
+            theme="outline"
+            (click)="setRowGrid(true)"
+            >
+        </i>
+        <i antIcon
+            [class]="!rowGrid ? 'active' : ''"
+            type="appstore"
+            theme="fill"
+            (click)="setRowGrid(false)"
+            >
+        </i>
+    </div>
 
-<button (click)="onSave()">Save</button>
+</div>
 
-<div class="album-wrapper">
-
-    <input 
-        type="search" 
-        name="" 
-        id=""
-        (keyup)="searchPics()"
-    >
-
-<ng-container *ngFor = "let n of albumArray; let index = index">
+<div class="album-wrapper" [class]="rowGrid ? 'row-grid' : ''">
+<ng-container *ngFor = "let n of searchActive ? filteredArr : albumArray; let index = index">
 
     <app-album-picture
-        [title]="albumArray[index]['title']"
-        [thumb]="albumArray[index]['thumbnailUrl']"
-        [imgUrl]="albumArray[index]['url']"
-        [imgId]="albumArray[index]['id']"
+        [title]="n['title']"
+        [thumb]="n['thumbnailUrl']"
+        [imgUrl]="n['url']"
+        [imgId]="n['id']"
         (onDeletePic)="deletePic($event)"
     ></app-album-picture>
 

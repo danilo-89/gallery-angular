@@ -1,3 +1,65 @@
+.album-top {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 27px;
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.album-top .top-right {
+    display: flex;
+    align-items: center;
+}
+
+.album-top .top-right i {
+    font-size: 35px;
+    cursor: pointer;
+    color: #E5E5E5;
+    margin-left: 5px;
+}
+
+.album-top .top-right i.active {
+    color: #000000;
+}
+
+.album-top a.back-btn {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.album-top a.back-btn:hover {
+    color: #FFC23B;
+}
+
+.album-top h2 {
+    font-size: 64px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.album-top .searchHolder {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+}
+
+.album-top .searchHolder input {
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.album-top .no-results {
+    padding-top: 15px;
+}
+
 .album-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -9,4 +71,8 @@
 .album-item-wrapper {
     width: 33.33%;
     margin-bottom: 57px;
+}
+
+.row-grid .album-item-wrapper {
+    width: 100%;
 }

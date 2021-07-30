@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule  } from '@angular/common/http';
+import { IconModule } from '@ant-design/icons-angular';
 
 import { AppComponent } from './app.component';
 import { GaleryComponent } from './components/galery/galery.component';
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    IconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
