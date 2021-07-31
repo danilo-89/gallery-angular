@@ -11,6 +11,7 @@ export class GaleryItemComponent implements OnInit {
   @Input() title:string="";
   @Input() author:string="";
   @Input() albumLink:string="";
+  @Input() albumCover:string="";
 
   constructor() { }
 

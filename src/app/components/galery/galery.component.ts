@@ -14,6 +14,10 @@ export class GaleryComponent implements OnInit {
   testStr="something";
   albumArray:any;
   usersArray:any;
+  albumCovers:any;
+  isAlbumsReady = false;
+  isCoversReady = false;
+
 
   constructor(
     private http: HttpClient,
@@ -48,13 +52,46 @@ export class GaleryComponent implements OnInit {
       );
   }
 
+  filterArray(arr:any) {
+    const result:any = {}
+    const map = new Map();
+    for (const item of arr) {
+        if(!map.has(item['albumId'])){
+            map.set(item['albumId'], true);    // set any value to Map
+            result[item['albumId']] = item['url']
+        }
+    }
+    console.log(result)
+    this.albumCovers = result;
+    this.isCoversReady = true;
+  }
+
   getAlbumData() {
     const url = 'https://jsonplaceholder.typicode.com/albums/'
     return this.http.get(url)
       .subscribe(
         (resp) => {
-          this.albumArray = resp
+          this.albumArray = resp;
           console.log(this.albumArray);
+          this.getPhotos()
+          this.isAlbumsReady = true;
+        }
+      );
+  }
+
+
+  getPhotos() {
+    const url = 'https://jsonplaceholder.typicode.com/photos/'
+    return this.http.get(url)
+      .subscribe(
+        (resp) => {
+
+          this.filterArray(resp)
+
+          // console.log([...new Set(this.albumCovers.map
+          //   ((item:{albumId: number, url: string})=> item['albumId']))])
+          // console.log(resp.map((item:{albumId:number}) => item['albumId']));
+          // const unique = [...new Set(resp.map(item => item.group))]
         }
       );
   }

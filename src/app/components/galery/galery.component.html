@@ -25,13 +25,18 @@
 </div>
 
 <div class="gallery-wrapper" [class]="rowGrid ? 'row-grid' : ''">
-<ng-container *ngFor = "let n of albumArray; let index = index">
 
-    <app-galery-item
-        [title]="albumArray[index]['title']"
-        [author]="getUserName(albumArray[index]['userId'])"
-        [albumLink]="albumArray[index]['id']"
-    ></app-galery-item>
+    <ng-template [ngIf]="isAlbumsReady && isCoversReady">
+        <ng-container *ngFor = "let n of albumArray; let index = index">
 
-</ng-container>
+            <app-galery-item
+                [title]="albumArray[index]['title']"
+                [author]="getUserName(albumArray[index]['userId'])"
+                [albumLink]="albumArray[index]['id']"
+                [albumCover]="albumCovers[albumArray[index]['id']]"
+            ></app-galery-item>
+        
+        </ng-container>
+    </ng-template>
+
 </div>
