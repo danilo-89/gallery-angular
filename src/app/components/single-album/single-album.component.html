@@ -1,3 +1,18 @@
+<ng-template [ngIf]="deleteDialog[0]">>
+    <div class="delete-dialog">
+        
+        <div class="delete-dialog-content">
+            <h3>Da li si siguran da želiš da obrišeš (naziv dijaloga)?</h3>
+            <div>
+                <span (click)="deleteConfirm()" class="modal-btn">Da</span>
+                <span class="dot">·</span>
+                <span (click)="deleteCancel()" class="modal-btn">Ne</span>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
 <ng-template [ngIf]="largeImg[0]">
     <div 
         class="large-img-preview"
@@ -26,7 +41,7 @@
 <div class="album-top">
 
     <div class="top-left">
-        <a href="/albums" class="back-btn">
+        <a href="/" class="back-btn">
             <span>← povratak</span>
         </a>
         <h2>

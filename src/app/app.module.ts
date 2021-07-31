@@ -12,9 +12,8 @@ import { SingleAlbumComponent } from './components/single-album/single-album.com
 import { AlbumPictureComponent } from './components/album-picture/album-picture.component'; 
 
 const appRoutes: Routes = [
-  { path: 'albums', component: GaleryComponent},
   { path: 'album', component: SingleAlbumComponent},
-  { path: '', component: GaleryItemComponent}
+  { path: '', component: GaleryComponent}
 ];
 
 @NgModule({

@@ -14,7 +14,6 @@ export class AlbumPictureComponent implements OnInit {
   @Input() imgId:string="";
   @Output() onDeletePic = new EventEmitter();
 
-
   fireDeletePicEvent(a:any) {
     this.onDeletePic.emit(a)
   }

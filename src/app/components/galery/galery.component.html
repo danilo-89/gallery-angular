@@ -26,7 +26,7 @@
 
 <div class="gallery-wrapper" [class]="rowGrid ? 'row-grid' : ''">
 
-    <ng-template [ngIf]="isAlbumsReady && isCoversReady">
+    <ng-template [ngIf]="isAlbumsReady && isCoversReady" [ngIfElse]="loading">
         <ng-container *ngFor = "let n of albumArray; let index = index">
 
             <app-galery-item
@@ -37,6 +37,10 @@
             ></app-galery-item>
         
         </ng-container>
+    </ng-template>
+
+    <ng-template #loading>
+        <div>Loading...</div>
     </ng-template>
 
 </div>

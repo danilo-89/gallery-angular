@@ -17,6 +17,7 @@ export class SingleAlbumComponent implements OnInit {
   albumName:any;
   rowGrid = false;
   largeImg = ['', 0];
+  deleteDialog = [false,''];
 
   // onSave(event?: MouseEvent) {
   //   const evtMsg = event ? ' Event target is ' + (event.target as HTMLElement).textContent : '';
@@ -25,7 +26,12 @@ export class SingleAlbumComponent implements OnInit {
   //   if (event) { event.stopPropagation(); }
   // }
 
-  deletePic(imgId:string) {
+  deleteCancel() {
+    this.deleteDialog = [false, ''];
+  }
+
+  deleteConfirm() {
+    const imgId = this.deleteDialog[1];
     console.log(imgId)
     console.log(this.filteredArr);
     const newArr = this.albumArray.filter((item:{id:string}) => {return item['id']!=imgId});
@@ -34,8 +40,13 @@ export class SingleAlbumComponent implements OnInit {
       const newFilteredArr = this.filteredArr.filter((item:{id:string}) => {return item['id']!=imgId})
       this.filteredArr = newFilteredArr;
     }
-
     this.albumArray = newArr;
+
+    this.deleteDialog = [false, ''];
+  }
+
+  deletePic(imgId:string) {
+    this.deleteDialog = [true, imgId];
   }
 
 

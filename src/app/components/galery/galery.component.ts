@@ -58,7 +58,7 @@ export class GaleryComponent implements OnInit {
     for (const item of arr) {
         if(!map.has(item['albumId'])){
             map.set(item['albumId'], true);    // set any value to Map
-            result[item['albumId']] = item['url']
+            result[item['albumId']] = item['thumbnailUrl']
         }
     }
     console.log(result)

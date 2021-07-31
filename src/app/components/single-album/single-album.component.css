@@ -160,3 +160,49 @@
         width: 100%;
     }
 }
+
+.delete-dialog {
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffffff;
+}
+
+.delete-dialog .delete-dialog-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+.delete-dialog .delete-dialog-content h3 {
+    font-size: 64px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 71px;
+}
+
+.delete-dialog .delete-dialog-content span {
+    font-size: 64px;
+    font-weight: 200;
+    display: inline-block;
+}
+
+.delete-dialog .delete-dialog-content span.dot {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.delete-dialog .delete-dialog-content span.modal-btn {
+    cursor: pointer;
+}
+
+.delete-dialog .delete-dialog-content span.modal-btn:hover {
+    color: #FFC23B;
+}
