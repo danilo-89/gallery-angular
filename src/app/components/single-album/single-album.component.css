@@ -1,18 +1,52 @@
+.large-img-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #E5E5E5;
+}
+
+.large-img-preview img {
+    max-width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.large-img-preview .prev-btn {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.large-img-preview .next-btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
 .album-top {
-    max-width: 1140px;
+    max-width: 100vw;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 27px;
     padding-top: 30px;
     padding-right: 15px;
     padding-left: 15px;
-    display: flex;
-    justify-content: space-between;
+    display: block;
 }
 
 .album-top .top-right {
-    display: flex;
-    align-items: center;
+    display: none;
 }
 
 .album-top .top-right i {
@@ -47,6 +81,7 @@
 .album-top .searchHolder {
     display: inline-block;
     border-bottom: 1px solid #000;
+    max-width: 100%;
 }
 
 .album-top .searchHolder input {
@@ -54,6 +89,12 @@
     outline: none;
     font-size: 30px;
     font-weight: 100;
+    max-width: 85%;
+}
+
+.album-top .searchHolder i {
+    font-size: 22px;
+    margin-right: 5px;
 }
 
 .album-top .no-results {
@@ -69,10 +110,52 @@
 }
 
 .album-item-wrapper {
-    width: 33.33%;
+    width: 100%;
     margin-bottom: 57px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.row-grid .album-item-wrapper {
-    width: 100%;
+@media (min-width: 734px) {
+
+    .album-top {
+        max-width: 1140px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .album-item-wrapper {
+        width: 50%;
+        margin-bottom: 57px;
+    }
+
+    .album-top .top-right {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1104px) {
+
+    .album-top {
+        max-width: 1140px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .album-item-wrapper {
+        width: 33.33%;
+        margin-bottom: 57px;
+    }
+
+    .album-top .top-right {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 734px) {
+    .row-grid .album-item-wrapper {
+        width: 100%;
+    }
 }

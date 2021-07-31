@@ -1,3 +1,28 @@
+<ng-template [ngIf]="largeImg[0]">
+    <div 
+        class="large-img-preview"
+        (click)="closeLarge()"
+    >
+        <img src={{largeImg[0]}} alt="">
+        <div class="prev-btn">
+            <i antIcon
+            type="arrow-left"
+            theme="outline"
+            (click)="prevImg($event)"
+        >
+        </i>
+        </div>
+        <div class="next-btn">
+            <i antIcon
+                type="arrow-right"
+                theme="outline"
+                (click)="nextImg($event)"
+            >
+            </i>
+        </div>
+    </div>
+</ng-template>
+
 <div class="album-top">
 
     <div class="top-left">
@@ -47,7 +72,7 @@
 <div class="album-wrapper" [class]="rowGrid ? 'row-grid' : ''">
 <ng-container *ngFor = "let n of searchActive ? filteredArr : albumArray; let index = index">
 
-    <app-album-picture
+    <app-album-picture (click)="showLargeImg(n['url'], index)"
         [title]="n['title']"
         [thumb]="n['thumbnailUrl']"
         [imgUrl]="n['url']"
@@ -57,8 +82,11 @@
 
 </ng-container>
 
-</div>
+<ng-template [ngIf]="!filteredArr.length && searchActive">
+    <div class="no-results">No search results!</div>
+</ng-template>
 
+</div>
 <!-- [title]="albumArray[index]['title']"
         [author]="getUserName(albumArray[index]['userId'])"
         [albumLink]="albumArray[index]['id']" -->

@@ -12,10 +12,11 @@ export class SingleAlbumComponent implements OnInit {
   albumArray:any;
   albumObj:any;
   albumId = '0';
-  filteredArr=[];
+  filteredArr= [];
   searchActive = false;
   albumName:any;
   rowGrid = false;
+  largeImg = ['', 0];
 
   // onSave(event?: MouseEvent) {
   //   const evtMsg = event ? ' Event target is ' + (event.target as HTMLElement).textContent : '';
@@ -58,6 +59,42 @@ export class SingleAlbumComponent implements OnInit {
       this.filteredArr = []
     }
     console.log(this.filteredArr);
+  }
+
+
+  showLargeImg(n:string, i:number) {
+    this.largeImg[0] = n;
+    this.largeImg[1] = i;
+  }
+
+  nextImg(event:any) {
+    event.stopPropagation();
+    const currentIndex = +this.largeImg[1];
+    if (currentIndex === this.albumArray.length - 1) {
+      this.largeImg[0] = this.albumArray[0].url;
+      this.largeImg[1] = 0;
+    } else {
+      this.largeImg[0] = this.albumArray[currentIndex+1].url;
+      this.largeImg[1] = currentIndex+1;
+    }
+  }
+
+  prevImg(event:any) {
+    event.stopPropagation();
+    const currentIndex = +this.largeImg[1];
+    console.log(currentIndex)
+    if (currentIndex === 0) {
+      this.largeImg[0] = this.albumArray[this.albumArray.length - 1].url;
+      this.largeImg[1] = this.albumArray.length - 1;
+    } else {
+      this.largeImg[0] = this.albumArray[currentIndex-1].url;
+      this.largeImg[1] = currentIndex-1;
+    }
+    
+  }
+
+  closeLarge() {
+    this.largeImg = ['', 0];
   }
 
   constructor(
