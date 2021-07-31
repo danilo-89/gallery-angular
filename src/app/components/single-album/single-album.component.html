@@ -72,7 +72,7 @@
 <div class="album-wrapper" [class]="rowGrid ? 'row-grid' : ''">
 <ng-container *ngFor = "let n of searchActive ? filteredArr : albumArray; let index = index">
 
-    <app-album-picture (click)="showLargeImg(n['url'], index)"
+    <app-album-picture (click)="showLargeImg($event, n['url'], index)"
         [title]="n['title']"
         [thumb]="n['thumbnailUrl']"
         [imgUrl]="n['url']"
@@ -81,10 +81,6 @@
     ></app-album-picture>
 
 </ng-container>
-
-<ng-template [ngIf]="!filteredArr.length && searchActive">
-    <div class="no-results">No search results!</div>
-</ng-template>
 
 </div>
 <!-- [title]="albumArray[index]['title']"

@@ -62,9 +62,14 @@ export class SingleAlbumComponent implements OnInit {
   }
 
 
-  showLargeImg(n:string, i:number) {
-    this.largeImg[0] = n;
-    this.largeImg[1] = i;
+  showLargeImg(e: any, n:string, i:number) {
+    if (e.target.tagName == 'IMG') {
+      this.largeImg[0] = n;
+      this.largeImg[1] = i;
+    }
+    // console.log(e)
+    // console.log(e.target.localName)
+    // console.log(e.target.tagName)
   }
 
   nextImg(event:any) {

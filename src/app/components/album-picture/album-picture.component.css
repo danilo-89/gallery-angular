@@ -24,6 +24,12 @@
     object-position: center;
     margin-bottom: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.picture-item > img:hover {
+    filter:sepia(100%);
+    padding: 3px;
 }
 
 .picture-item > h3 {

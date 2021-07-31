@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GaleryComponent implements OnInit {
 
+  rowGrid = false;
   testStr="something";
   albumArray:any;
   usersArray:any;
@@ -25,6 +26,14 @@ export class GaleryComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       console.log(params.abc);
     });
+  }
+
+  setRowGrid(state:boolean) {
+    if(state) {
+      this.rowGrid = true;
+    } else {
+      this.rowGrid = false;
+    }
   }
 
   getUserData() {

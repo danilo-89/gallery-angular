@@ -1,10 +1,30 @@
-<h1>Foto albumi familije Marković</h1>
+<div class="gallery-top">
 
-<p>galery works!</p>
+    <div class="top-left">
+        <h2>
+            Foto albumi familije Marković
+        </h2>
+    </div>
+    <div class="top-right">
+        <i antIcon
+            [class]="rowGrid ? 'active' : ''"
+            type="menu"
+            theme="outline"
+            (click)="setRowGrid(true)"
+            >
+        </i>
+        <i antIcon
+            [class]="!rowGrid ? 'active' : ''"
+            type="appstore"
+            theme="fill"
+            (click)="setRowGrid(false)"
+            >
+        </i>
+    </div>
 
-{{testStr}}
+</div>
 
-<div class="gallery-wrapper">
+<div class="gallery-wrapper" [class]="rowGrid ? 'row-grid' : ''">
 <ng-container *ngFor = "let n of albumArray; let index = index">
 
     <app-galery-item

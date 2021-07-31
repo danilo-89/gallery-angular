@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GaleryItemComponent } from './galery-item.component';
 
 describe('GaleryItemComponent', () => {
+
   let component: GaleryItemComponent;
   let fixture: ComponentFixture<GaleryItemComponent>;
 
