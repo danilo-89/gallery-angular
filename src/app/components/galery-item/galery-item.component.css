@@ -1,9 +1,11 @@
-.gallery-item {
+a.gallery-item {
     display: flex;
     flex-flow: column;
     width: 353px;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
+    color: unset;
 }
 
 .gallery-item img {
@@ -15,7 +17,7 @@
     margin-bottom: 16px;
 }
 
-.gallery-item a {
+.gallery-item h4 {
     margin-bottom: 2px;
     font-size: 32px;
     cursor: pointer;
@@ -24,7 +26,7 @@
     font-weight: 300;
 }
 
-.gallery-item a:hover {
+.gallery-item:hover h4 {
     color: #FFC23B;
     text-decoration: none;
 }
