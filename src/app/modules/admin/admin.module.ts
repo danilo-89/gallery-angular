@@ -7,6 +7,9 @@ import { GaleryItemComponent } from '../../components/galery-item/galery-item.co
 import { SingleAlbumComponent } from '../../components/single-album/single-album.component';
 import { AlbumPictureComponent } from '../../components/album-picture/album-picture.component';
 import { MainComponent } from '../../components/main/main.component';
+import { IconModule } from '@ant-design/icons-angular';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { MainComponent } from '../../components/main/main.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    IconModule
   ]
 })
 export class AdminModule { }

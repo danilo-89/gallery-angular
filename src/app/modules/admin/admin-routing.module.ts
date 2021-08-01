@@ -1,9 +1,5 @@
 import { GaleryComponent } from '../../components/galery/galery.component';
-import { GaleryItemComponent } from '../../components/galery-item/galery-item.component';
 import { SingleAlbumComponent } from '../../components/single-album/single-album.component';
-import { AlbumPictureComponent } from '../../components/album-picture/album-picture.component';
-import { LoginComponent } from '../../components/login/login.component';
-import { MainComponent } from 'src/app/components/main/main.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

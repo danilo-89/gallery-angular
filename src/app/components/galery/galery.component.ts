@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { IconDefinition, IconService } from '@ant-design/icons-angular';
+import { AccountBookFill, AppstoreFill, ArrowLeftOutline, ArrowRightOutline, DeleteOutline, MenuOutline, SearchOutline } from '@ant-design/icons-angular/icons'
 
 
 @Component({
@@ -21,9 +23,11 @@ export class GaleryComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _iconService: IconService
   ) {
     this.getUserData()
+    this._iconService.addIcon(...[ DeleteOutline, SearchOutline, MenuOutline, AppstoreFill, ArrowLeftOutline, ArrowRightOutline ]);
   }
 
   ngOnInit(): void {

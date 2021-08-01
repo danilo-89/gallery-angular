@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { IconDefinition, IconService } from '@ant-design/icons-angular';
+import { AccountBookFill, AppstoreFill, ArrowLeftOutline, ArrowRightOutline, DeleteOutline, MenuOutline, SearchOutline } from '@ant-design/icons-angular/icons'
 
 @Component({
   selector: 'app-single-album',
@@ -63,12 +65,20 @@ export class SingleAlbumComponent implements OnInit {
     const str = (e as HTMLInputElement).value;
     if(str.trim()) {
       this.searchActive = true;
-      this.filteredArr = this.albumArray.filter
-      ((item:{title:string}) => item['title'].search(str)>=0)      
+      this.filteredArr = this.albumArray.filter((item:{title:string}) => item['title'].search(str)>=0)      
     } else {
       this.searchActive = false;
       this.filteredArr = []
     }
+    // console.log(this.filteredArr);
+  }
+
+  getPicName(picId:any) {
+    // console.log((e as HTMLInputElement).value);
+
+    const picName = this.albumArray.filter((item:{id:number}) => item['id']==picId)
+
+    return picName[0]['title']
     // console.log(this.filteredArr);
   }
 
@@ -115,8 +125,11 @@ export class SingleAlbumComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private _iconService: IconService
+  ) {
+    this._iconService.addIcon(...[ DeleteOutline, SearchOutline, MenuOutline, AppstoreFill, ArrowLeftOutline, ArrowRightOutline ]);
+  }
 
 
   ngOnInit(): void {
