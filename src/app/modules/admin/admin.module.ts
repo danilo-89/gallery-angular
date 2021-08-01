@@ -6,7 +6,7 @@ import { GaleryComponent } from '../../components/galery/galery.component';
 import { GaleryItemComponent } from '../../components/galery-item/galery-item.component';
 import { SingleAlbumComponent } from '../../components/single-album/single-album.component';
 import { AlbumPictureComponent } from '../../components/album-picture/album-picture.component';
-import { MainComponent } from 'src/app/components/main/main.component'
+import { MainComponent } from '../../components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { MainComponent } from 'src/app/components/main/main.component'
     GaleryComponent,
     GaleryItemComponent,
     SingleAlbumComponent,
-    AlbumPictureComponent
+    AlbumPictureComponent,
   ],
   imports: [
     CommonModule,
