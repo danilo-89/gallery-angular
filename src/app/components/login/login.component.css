@@ -10,7 +10,7 @@
 }
 
 .login-container h2 {
-    font-size: 64px;
+    font-size: 42px;
     font-weight: 200;
     margin-bottom: 50px;
     max-width: 100%;
@@ -26,7 +26,7 @@
     display: inline-block;
     border: none;
     outline: none;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 200;
     max-width: 100%;
     padding-bottom: 15px;
@@ -49,4 +49,14 @@
 
 .input-submit:hover {
     background-color: #ebab22;
+}
+
+@media (min-width: 600px) {
+    .login-container h2 {
+        font-size: 64px;
+    }
+
+    .login-container .form-group input {
+        font-size: 32px;
+    }
 }

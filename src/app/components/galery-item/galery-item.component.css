@@ -2,6 +2,7 @@ a.gallery-item {
     display: flex;
     flex-flow: column;
     width: 353px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-decoration: none;

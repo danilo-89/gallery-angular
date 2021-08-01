@@ -18,7 +18,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 27px;
-    padding-top: 75px;
+    padding-top: 35px;
     padding-right: 15px;
     padding-left: 15px;
     display: block;
@@ -48,9 +48,21 @@
 }
 
 .gallery-top h2 {
-    font-size: 64px;
+    font-size: 42px;
     font-weight: 100;
     margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+
+    .gallery-top {
+        padding-top: 75px;
+    }
+
+    .gallery-top h2 {
+        font-size: 64px;
+    }
+
 }
 
 @media (min-width: 734px) {
