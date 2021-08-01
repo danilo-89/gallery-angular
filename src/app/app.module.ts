@@ -2,33 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule  } from '@angular/common/http';
 import { IconModule } from '@ant-design/icons-angular';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { GaleryComponent } from './components/galery/galery.component';
-import { GaleryItemComponent } from './components/galery-item/galery-item.component';
+import { LoginComponent } from './components/login/login.component';
 
-import { RouterModule, Routes } from '@angular/router';
-import { SingleAlbumComponent } from './components/single-album/single-album.component';
-import { AlbumPictureComponent } from './components/album-picture/album-picture.component'; 
-
-const appRoutes: Routes = [
-  { path: 'album', component: SingleAlbumComponent},
-  { path: '', component: GaleryComponent}
-];
-
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    GaleryComponent,
-    GaleryItemComponent,
-    SingleAlbumComponent,
-    AlbumPictureComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    IconModule
+    IconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

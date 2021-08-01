@@ -32,8 +32,8 @@ export class SingleAlbumComponent implements OnInit {
 
   deleteConfirm() {
     const imgId = this.deleteDialog[1];
-    console.log(imgId)
-    console.log(this.filteredArr);
+    // console.log(imgId)
+    // console.log(this.filteredArr);
     const newArr = this.albumArray.filter((item:{id:string}) => {return item['id']!=imgId});
 
     if(this.searchActive) {
@@ -59,7 +59,7 @@ export class SingleAlbumComponent implements OnInit {
   }
 
   searchPics(e:any) {
-    console.log((e as HTMLInputElement).value);
+    // console.log((e as HTMLInputElement).value);
     const str = (e as HTMLInputElement).value;
     if(str.trim()) {
       this.searchActive = true;
@@ -69,7 +69,7 @@ export class SingleAlbumComponent implements OnInit {
       this.searchActive = false;
       this.filteredArr = []
     }
-    console.log(this.filteredArr);
+    // console.log(this.filteredArr);
   }
 
 
@@ -98,7 +98,7 @@ export class SingleAlbumComponent implements OnInit {
   prevImg(event:any) {
     event.stopPropagation();
     const currentIndex = +this.largeImg[1];
-    console.log(currentIndex)
+    // console.log(currentIndex)
     if (currentIndex === 0) {
       this.largeImg[0] = this.albumArray[this.albumArray.length - 1].url;
       this.largeImg[1] = this.albumArray.length - 1;
@@ -121,7 +121,7 @@ export class SingleAlbumComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      console.log(params.album)
+      // console.log(params.album)
       this.albumId = params.album || '0';
       this.getAlbumName(this.albumId)
       this.getData(this.albumId)
@@ -134,7 +134,7 @@ export class SingleAlbumComponent implements OnInit {
       .subscribe(
         (resp) => {
           this.albumArray = resp;
-          console.log(this.albumArray)
+          // console.log(this.albumArray)
         }
       );
   }

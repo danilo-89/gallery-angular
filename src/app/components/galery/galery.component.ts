@@ -46,7 +46,7 @@ export class GaleryComponent implements OnInit {
       .subscribe(
         (resp) => {
           this.usersArray = resp
-          console.log(this.usersArray);
+          // console.log(this.usersArray);
           this.getAlbumData()
         }
       );
@@ -61,7 +61,7 @@ export class GaleryComponent implements OnInit {
             result[item['albumId']] = item['thumbnailUrl']
         }
     }
-    console.log(result)
+    // console.log(result)
     this.albumCovers = result;
     this.isCoversReady = true;
   }
@@ -72,7 +72,7 @@ export class GaleryComponent implements OnInit {
       .subscribe(
         (resp) => {
           this.albumArray = resp;
-          console.log(this.albumArray);
+          // console.log(this.albumArray);
           this.getPhotos()
           this.isAlbumsReady = true;
         }
