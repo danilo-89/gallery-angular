@@ -1,4 +1,4 @@
-<a href="/album?album={{albumLink}}" class="gallery-item">
+<a [routerLink]="['/album']" [queryParams]="{album: albumLink}" class="gallery-item">
     <img src="{{albumCover}}" alt="some image">
     <div>
         <h4>{{title}}</h4>
