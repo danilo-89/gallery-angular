@@ -2,7 +2,7 @@
 
 Example of simple gallery. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
-{JSON} Placeholder API is used to generate data.
+[{JSON} Placeholder API](https://jsonplaceholder.typicode.com/) is used to generate data.
 
 ![](/src/assets/images/screen.png)
 
